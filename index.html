@@ -58,6 +58,39 @@
 </head>
 <!-- Alternate Body Classes: .modern and .vintage -->
 
+<style>
+  .work__list { list-style: none; margin: 0; padding: 0; }
+  .work__item { margin-top: 64px; margin-bottom: 48px;}
+  .work__item + .work__item { margin-top: 80px; }
+  /*.work__item:nth-child(even) .project { flex-direction: row-reverse; }*/
+
+  /* Two columns: copy on the left, image on the right */
+  .project {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  .project__content { flex: 1 1 50%; min-width: 0; text-align: left;}
+  .project__summary {margin-top: 24px;}
+  .project__media   { flex: 1 1 50%; min-width: 0; margin: 0; }
+  .project__media img { display: block; width: 100%; height: auto; }
+
+  /* Stack on small screens: copy first, then image */
+  @media (max-width: 700px) {
+    .project { flex-direction: column; align-items: stretch; }
+  }
+  .dotted-text {
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+  }
+  .highlight {
+  background-color: #94E694;
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+</style>
+
 <body id="page-top">
  
     <!-- Navigation -->
@@ -84,16 +117,10 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#featured">Featured Work</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Skills</a>
-                    </li>
-                    <!--<li>
-                        <a class="page-scroll" href="#process">Process</a>
-                    </li>-->
-                    <li>
-                        <a class="page-scroll" href="#work">Portfolio</a>
+                        <a class="page-scroll" href="#more">More Work</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -116,55 +143,72 @@
             <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
         </div>
     </header>-->
-    <section id="about">
-        <div class="container wow fadeIn">
+    <section>
+        <div class="container wow fadeIn desktop">
             <div class="row padding-top-fix">
                 <div class="col-md-6">
                     <img src="assets/img/profile-pic.jpg" class="img-responsive" alt="" style="border:1px solid #eee;padding:2px;">
                 </div>
                 <div class="col-md-6">
-                    <h1>Hi, I'm Nick.</h1>
+                    <p class="eyebrow bold-9 mt24">Hi, I'm Nick</p>
+                    <h1 class="title">UX Designer &amp; Developer</h1>
                     <hr class="colored left">
-                    <p>I am a UX designer and developer based in Chicago, Illinois. My professional background spans ten years and even though I hold a Graphic Design degree, most of my skills are self-taught through hard work and a natural curiosity. What&rsquo;s with the pose? Just doin&rsquo; some yoga.</p>
+                    <p>I’m a <span class="bold-5">results-driven UX designer and front-end developer</span> with 15+ years of experience turning business problems into clear, high-performing digital experiences. My work has driven measurable gains in sales, engagement, and delivery speed, from redesigned learning and search experiences for a direct-selling sales force to seating maps and checkout flows for major ticket marketplaces.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn mobile">
+            <div class="row mt48">
+                <div class="col-xs-6">
+                    <img src="assets/img/profile-pic.jpg" class="img-responsive" alt="" style="border:1px solid #eee;padding:2px;">
+                </div>
+                <div class="col-xs-6" style="padding-left: 0;">
+                    <p class="eyebrow bold-9 mt24">Hi, I'm Nick</p>
+                    <h1 class="title">UX Designer &amp; Developer</h1>
+                </div>
+            </div>
+            <div class="row mt24">
+                <div class="col-lg-12">
+                    <p>I’m a <span class="bold-5">results-driven UX designer and front-end developer</span> with 15+ years of experience turning business problems into clear, high-performing digital experiences. My work has driven measurable gains in sales, engagement, and delivery speed, from redesigned learning and search experiences for a direct-selling sales force to seating maps and checkout flows for major ticket marketplaces.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="services" class="bg-gray">
+    <section class="bg-gray">
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-lg-12 wow fadeIn">
-                    <h1>What I do</h1>
-                    <!--<p>I do web design, web development, UX/UI, and graphic design.</p>
-                    <hr class="colored">-->
+                    <p class="eyebrow bold-9 mt24">Process</p>
+                    <h2>From Problem to Results</h2>
+                    <hr class="colored">
                 </div>
             </div>
             <div class="row text-center content-row">
                 <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".2s">
                     <div class="about-content">
                         <i class="fa fa-laptop fa-4x"></i>
-                        <h3>Digital Design</h3>
-                        <p>Web, email, and graphic design</p>
+                        <h3 class="mt0">Define</h3>
+                        <p>Turn business problems into user flows, information architecture, and content strategy.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
                     <div class="about-content">
                         <i class="fa fa-code fa-4x"></i>
-                        <h3>Front-End Development</h3>
-                        <p>HTML/CSS/JS/Email</p>
+                        <h3 class="mt0">Design</h3>
+                        <p>Responsive interfaces and reusable Figma components, built around clear design systems.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".8s">
                     <div class="about-content">
                         <i class="fa fa-smile-o fa-4x"></i>
-                        <h3>UX/UI</h3>
-                        <p>Make things easy to use</p>
+                        <h3 class="mt0">Deliver</h3>
+                        <p>Developer handoff, QA, and front-end development, then keep improving after launch.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <aside class="cta-quote" style="background-color:#222222;">
+    <!-- <aside class="cta-quote" style="background-color:#222222;">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 wow fadeIn">
@@ -174,56 +218,124 @@
                 </div>
             </div>
         </div>
-    </aside>
-    <section id="work">
+    </aside> -->
+
+    <!-- Selected work: framework with a two-column layout (copy left, image right).
+     Only layout CSS is included. Class names are hooks for your own styling. -->
+
+
+<section id="featured" class="work" aria-labelledby="work-heading">
+<div class="container text-center wow fadeIn">
+    <p class="eyebrow bold-9 mt24">Featured Work</p>
+  <h2 id="work-heading" class="work__heading">UX That Drives Results</h2>
+  <hr class="colored">
+  <ul class="work__list">
+
+    <!-- Project 1 -->
+    <li class="work__item">
+      <article class="project">
+        <div class="project__content">
+            <!-- <img src="https://www.pamperedchef.com/iceberg/images/tpclogo_us.png" style="max-width: 200px;"> -->
+            <p class="eyebrow bold-9 mt24">Pampered Chef</p>
+            <h3 class="project__title">Learning Center Redesign</h3>
+            <p class="project__summary">
+                <span class="bold-7">Problem:</span> Pampered Chef’s independent consultants run their own sales businesses, and their training lived on a clunky, overwhelming vendor platform outside their main business website. Consultants couldn’t easily find the basics they needed to learn and succeed.
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">My role:</span> UX strategy and design
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">Solution:</span> A full content audit cut everything that wasn’t business-critical, reducing categories to ease decision overload. I added a Common Challenges section built around consultants’ most frequent problems, a single home for live learning events that had been scattered across the site and emails, and estimated completion times so lessons felt achievable.
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">Results:</span> <span class="highlight">Increased traffic by 7x</span> compared with the vendor platform. Average <span class="highlight">increase of $553 in monthly sales</span> per consultant (+45% year over year).
+            </p>
+        </div>
+        <figure class="project__media">
+          <img src="assets/img/learning-center.jpg" width="600" height="400" loading="lazy" alt="The redesigned Learning Center page in Consultant's Corner">
+        </figure>
+      </article>
+    </li>
+    <hr class="dotted">
+    <!-- Project 2 -->
+    <li class="work__item">
+      <article class="project">
+        <div class="project__content">
+            <p class="eyebrow bold-9 mt24">Pampered Chef</p>
+            <h3 class="project__title">Search Experience Redesign</h3>
+            <p class="project__summary">
+                <span class="bold-7">Problem:</span> Consultant’s Corner is where Pampered Chef’s independent sales consultants find everything they need to run their businesses. Its search often returned confusing results and had no clear flow, so finding the right tool or resource was challenging.
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">My role:</span> UX strategy and design
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">Solution:</span> I solved this by organizing results into four easy-to-scan categories: Content, Marketing Materials, Products, and Recipes.
+            </p>
+            <ul style="margin-left: -10px;">
+                <li><span class="bold-7">Stay in place:</span> Because products and recipes live on the public site, I added external-link icons to their thumbnails and opened them in new tabs, so consultants never lose their spot in Consultant’s Corner.</li>
+                <li style="padding-top: 10px;"><span class="bold-7">Use &amp; Care guides:</span> Consultants rely on these for customer support, so I worked around a technical constraint to make them easy to find.</li>
+                <li style="padding-top: 10px;"><span class="bold-7">Content grouped the way consultants talk:</span> I split the Content category into News, Blog, Learning Center, Consultant’s Corner, and pamperedchef.com. This matches the way consultants describe their business, so the structure feels familiar and results are easier to scan.</li>
+            </ul>
+            <p class="project__summary">
+                <span class="bold-7">Results:</span> <span class="highlight">Launched mid-October 2026.</span> Analytics will be added soon. 
+            </p>
+        </div>
+        <figure class="project__media">
+            <img src="assets/img/all-search-results-page.jpg" width="600" height="400" loading="lazy" alt="The redesigned search results page showing four result categories">
+        </figure>
+      </article>
+    </li>
+<hr class="dotted">
+    <!-- Project 3 -->
+    <li class="work__item">
+      <article class="project">
+        <div class="project__content">
+            <p class="eyebrow bold-9 mt24">Pampered Chef</p>
+          <h3 class="project__title">45<sup>th</sup> Anniversary Promotion</h3>
+          <p class="project__summary">
+                <span class="bold-7">Problem:</span> To celebrate Pampered Chef’s 45<sup>th</sup> anniversary, we ran a large promotion in which consultants could earn one-of-a-kind stoneware dinnerware pieces, handcrafted in collaboration with our longstanding stoneware manufacturer. It was tied to our regular monthly Sales Rewards and Recruiter Rewards, and the challenge was building excitement without confusing consultants. The existing rewards pages weren’t built to hold all of the anniversary details, and we didn’t want to overwhelm consultants with too much information at once.
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">My role:</span> UX strategy, design, development
+            </p>
+            <p class="project__summary">
+                <span class="bold-7">Solution:</span>
+            </p>
+            <ul style="margin-left: -10px;">
+                <li><span class="bold-7">One central landing page:</span> A single home for the anniversary promotion, with separate sections for the current Sales Reward and Recruiter Reward.</li>
+                <li style="padding-top: 10px;"><span class="bold-7">Connected pages:</span> The existing rewards pages link back to the landing page, so the full details are always one click away without crowding those pages.</li>
+                <li style="padding-top: 10px;"><span class="bold-7">Storytelling over display:</span> The pieces were one of a kind and handcrafted, so I told the story behind them and led with emotion, not just a list of rewards.</li>
+            </ul>
+            <p class="project__summary">
+                <span class="bold-7">Results:</span> Consultants had a <span class="highlight">24% higher achievement rate</span> than the year before.
+            </p>
+        </div>
+        <figure class="project__media">
+            <img src="assets/img/anniversary-collection.jpg" width="600" height="400" loading="lazy" alt="The 45th Anniversary Collection promotion page">
+        </figure>
+      </article>
+    </li>
+
+  </ul>
+
+  </div>
+</section>
+
+    <section id="more" style="padding-top: 0;">
         <div class="container text-center wow fadeIn">
-            <h2>Portfolio</h2>
+            <p class="eyebrow bold-9 mt24">More Work</p>
+            <h2 id="work-heading" class="work__heading">Additional Design & Development Projects</h2>
             <hr class="colored">
             <div class="row">
                 <div class="col-lg-12">
                     <div id="portfoliolist">
-                        <div class="portfolio identity" data-cat="identity" href="#portfolioModal1" data-toggle="modal">
-                            <div class="portfolio-wrapper">
-                                <img src="assets/img/pampered-chef.jpg" alt="">
-                                <div class="caption">
-                                    <div class="caption-text">
-                                        <a class="text-title">Pampered Chef</a>
-                                        <span class="text-category"></span>
-                                    </div>
-                                    <div class="caption-bg"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="portfolio web" data-cat="web" href="#portfolioModal2" data-toggle="modal">
                             <div class="portfolio-wrapper">
                                 <img src="assets/img/ticketsnow.jpg" alt="">
                                 <div class="caption">
                                     <div class="caption-text">
                                         <a class="text-title">TicketsNow</a>
-                                        <span class="text-category"></span>
-                                    </div>
-                                    <div class="caption-bg"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal3" data-toggle="modal">
-                            <div class="portfolio-wrapper">
-                                <img src="assets/img/nicolinos.jpg" alt="">
-                                <div class="caption">
-                                    <div class="caption-text">
-                                        <a class="text-title">Nicolino&rsquo;s</a>
-                                        <span class="text-category"></span>
-                                    </div>
-                                    <div class="caption-bg"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio web" data-cat="web" href="#portfolioModal4" data-toggle="modal">
-                            <div class="portfolio-wrapper">
-                                <img src="assets/img/ai.jpg" alt="">
-                                <div class="caption">
-                                    <div class="caption-text">
-                                        <a class="text-title">The Illinois Institute of Art-Schaumburg</a>
                                         <span class="text-category"></span>
                                     </div>
                                     <div class="caption-bg"></div>
@@ -242,6 +354,31 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="portfolio graphic" data-cat="graphic" href="#portfolioModal3" data-toggle="modal">
+                            <div class="portfolio-wrapper">
+                                <img src="assets/img/nicolinos.jpg" alt="">
+                                <div class="caption">
+                                    <div class="caption-text">
+                                        <a class="text-title">Nicolino&rsquo;s</a>
+                                        <span class="text-category"></span>
+                                    </div>
+                                    <div class="caption-bg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="portfolio web" data-cat="web" href="#portfolioModal4" data-toggle="modal">
+                            <div class="portfolio-wrapper">
+                                <img src="assets/img/ai.jpg" alt="">
+                                <div class="caption">
+                                    <div class="caption-text">
+                                        <a class="text-title">The Illinois Institute of Art-Schaumburg</a>
+                                        <span class="text-category"></span>
+                                    </div>
+                                    <div class="caption-bg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="portfolio web" data-cat="web" href="#portfolioModal6" data-toggle="modal">
                             <div class="portfolio-wrapper">
                                 <img src="assets/img/logos.jpg" alt="">
@@ -253,7 +390,7 @@
                                     <div class="caption-bg"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -321,7 +458,7 @@
     	<div class="container text-center">
     	<div class="row copyright">
         	<div class="col-lg-12">
-            	<p class="small">&copy; 2023 Nicholas Bono</p>
+            	<p class="small">&copy; 2026 Nicholas Bono</p>
             </div>
         </div>
         </div>
@@ -519,7 +656,7 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <h2>Nicolino's</h2>
                             <hr class="colored">
-                            <p>Design and develop all marketing and promotional material across all channels.</p>
+                            <p>Design and development of all marketing and promotional material for full-service restaurant.</p>
                         </div>
                         <div class="col-lg-12">
                             <img src="assets/img/my-portfolio/nicolinos-email.png" class="img-responsive img-centered" alt="">
