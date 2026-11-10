@@ -180,7 +180,12 @@ p {
 }
 p.eyebrow {
   font-size: 16px;
+}
+p.eyebrow.green {
   color: #3c903c;
+}
+p.eyebrow.gray {
+  color: #777;
 }
 .bold-5 {
   font-weight: 500;
@@ -251,6 +256,9 @@ hr.colored {
   section {
         padding: 48px 0;
     }
+  .neg-mt24 {
+    margin-top: -24px;
+  } 
 }
 
 @media (min-width: 501px) {
