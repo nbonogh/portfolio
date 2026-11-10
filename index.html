@@ -58,6 +58,44 @@
 </head>
 <!-- Alternate Body Classes: .modern and .vintage -->
 
+<style>
+  .work__list { list-style: none; margin: 0; padding: 0; }
+  .work__item { margin-top: 64px; margin-bottom: 48px;}
+  .work__item + .work__item { margin-top: 80px; }
+  /*.work__item:nth-child(even) .project { flex-direction: row-reverse; }*/
+
+  /* Two columns: copy on the left, image on the right */
+  .project {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  .project__content { flex: 1 1 50%; min-width: 0; text-align: left;}
+  .project__summary {margin-top: 24px;}
+  .project__media   { flex: 1 1 50%; min-width: 0; margin: 0; }
+  .project__media img { display: block; width: 100%; height: auto; }
+
+  /* Stack on small screens: copy first, then image */
+  @media (max-width: 500px) {
+  .work__item {
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+}
+  @media (max-width: 700px) {
+    .project { flex-direction: column; align-items: stretch; }
+  }
+  .dotted-text {
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+  }
+  .highlight {
+  background-color: #94E694;
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+</style>
 
 <body id="page-top">
  
