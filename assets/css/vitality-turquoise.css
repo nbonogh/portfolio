@@ -253,6 +253,10 @@ hr.colored {
    h1.title {
     font-size: 28px;
   }
+  .mobile-nav {
+    max-width: 140px;
+    margin-top: 4px;
+  }
   section {
         padding: 48px 0;
     }
